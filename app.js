@@ -143,9 +143,9 @@ import { createHostMigration } from './migration.js?v=2.1.1';
     photoLoaders.set(disclosure,load);disclosure.addEventListener('toggle',load);parent.append(disclosure);
   }
   function addSources(parent,sources) {
-    if(!sources?.length)return;const box=details('Fonti e verifica','source-disclosure'),ul=el('ul');
+    if(!sources?.length)return;const box=details('Fonti','source-disclosure'),ul=el('ul');
     for(const source of sources){const li=el('li');li.append(external(source.title||new URL(source.url).hostname,source.url));ul.append(li);}
-    box.append(ul,el('p','tiny','Nomi e indicazioni verificati il 20 ottobre 2026. Le immagini possono mostrare un’altra piattaforma.'));parent.append(box);
+    box.append(ul);parent.append(box);
   }
   function statusControl(guide) {
     const c=selection('Il tuo progresso',Object.entries(STATUS_LABELS),guideStatus(guide.id,current),async value=>{

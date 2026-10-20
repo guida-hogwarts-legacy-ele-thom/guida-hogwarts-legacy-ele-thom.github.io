@@ -1,4 +1,4 @@
-# Guida Completa Hogwarts Legacy · 2.1.1
+# Guida Completa Hogwarts Legacy · 2.1.2
 
 **Sito:** https://guida-hogwarts-legacy-ele-thom.github.io/
 
@@ -6,6 +6,9 @@ Guida italiana per Nintendo Switch 2, con profili Ele/Grifondoro e
 Thom/Serpeverde. Gli aggiornamenti della guida arrivano sullo stesso link.
 
 ## Novità 2.1
+
+- Home allineata anche nel riquadro Riprendi; informazioni, crediti e fonti più
+  compatti, consultabili su richiesta.
 
 - Indirizzo dedicato; il vecchio sito conserva l'accesso e permette il passaggio
   dopo aver sincronizzato i progressi presenti sul dispositivo.

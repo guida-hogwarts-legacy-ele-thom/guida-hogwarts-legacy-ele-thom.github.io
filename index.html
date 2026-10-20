@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#22262b">
-  <meta name="demiguise-release" content="2.1.1">
+  <meta name="demiguise-release" content="2.1.2">
   <meta name="description" content="La guida personale a Hogwarts Legacy: missioni, sblocchi e guide pratiche, con ricerca e progressi separati per Ele e Thom.">
   <title>Guida Completa Hogwarts Legacy</title>
   <link rel="icon" type="image/png" sizes="64x64" href="./assets/hogwarts-crest.png">
-  <link rel="stylesheet" href="./styles.css?v=2.1.1">
+  <link rel="stylesheet" href="./styles.css?v=2.1.2">
 </head>
 <body data-profile="">
   <main class="shell">
@@ -76,21 +76,23 @@
       <h1 id="viewTitle" tabindex="-1">Esplora la guida</h1>
       <section id="homeView" class="view" aria-label="Pagina iniziale">
         <div id="homeCards" class="section-grid"></div>
-        <section id="resumePanel" class="resume-panel" aria-labelledby="resumeTitle"><h2 id="resumeTitle">Riprendi</h2><div id="resumeContent"></div></section>
-        <p class="tiny">Nintendo Switch 2 · Nomi italiani verificati. Le soluzioni sono consultabili; gli spoiler di trama si aprono solo quando vuoi.</p>
+        <section id="resumePanel" class="resume-panel" aria-labelledby="resumeTitle">
+          <div class="resume-heading"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 1.4 7.1M3 5v6h6M12 8v5l3 2"/></svg></span><h2 id="resumeTitle">Riprendi</h2></div>
+          <div id="resumeContent"></div>
+        </section>
       </section>
       <section id="sectionView" class="view" hidden><p id="sectionIntro" class="view-intro"></p><div id="categoryGrid" class="category-grid"></div></section>
       <section id="categoryView" class="view" hidden><p id="categoryIntro" class="view-intro"></p><div id="categoryFilters" class="catalogue-filters"></div><p id="categoryCount" class="tiny" role="status"></p><div id="categoryContents"></div></section>
       <section id="guideView" class="view" hidden></section>
       <section id="demiguiseView" class="view" hidden></section>
       <footer class="site-footer">
-        <details><summary>Come vengono salvati i progressi</summary><p>Le modifiche si sincronizzano tra i telefoni. Senza rete rimangono sul telefono fino alla riconnessione. La piccola spunta accanto al profilo conferma il salvataggio online: toccala per leggere i dettagli. Attendi questa conferma prima di cancellare i dati del browser.</p><p>I due profili sono condivisi, senza password: chi conosce il link può consultarli e modificarli. Gli aggiornamenti della guida conservano i progressi.</p></details>
-        <p class="fine">Guida indipendente, non affiliata agli autori del gioco. Emblemi delle casate e stemma di Hogwarts: <a href="https://www.harrypotter.com/" target="_blank" rel="noopener noreferrer">HarryPotter.com</a>. Stemma di Hogwarts: MinaLima.</p>
+        <details><summary>Salvataggio e profili</summary><p>I progressi si sincronizzano tra i telefoni. Senza rete restano sul dispositivo e vengono inviati alla riconnessione. La spunta accanto al profilo conferma il salvataggio online: attendila prima di cancellare i dati del browser.</p><p>Gli aggiornamenti conservano i progressi. I profili sono condivisi e senza password: chi conosce il link può consultarli e modificarli.</p></details>
+        <details><summary>Informazioni e crediti</summary><p>Guida per Nintendo Switch 2. Le soluzioni sono visibili; gli spoiler di trama si aprono solo su richiesta. Nomi e indicazioni verificati il 20 ottobre 2026; le foto possono provenire da altre piattaforme.</p><p>Fonti nelle singole schede e crediti sotto le foto. Emblemi: <a href="https://www.harrypotter.com/" target="_blank" rel="noopener noreferrer">HarryPotter.com</a>; stemma di Hogwarts: MinaLima.</p><p>Guida indipendente, non affiliata agli autori del gioco.</p></details>
       </footer>
     </div>
   </main>
   <dialog id="objectDialog" aria-labelledby="objectDialogTitle"><button id="closeObjectDialog" class="dialog-close" type="button" aria-label="Chiudi scheda oggetto">✕</button><div id="objectDialogContent"></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./app.js?v=2.1.1"></script>
+  <script type="module" src="./app.js?v=2.1.2"></script>
 </body>
 </html>
