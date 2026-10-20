@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#22262b">
+  <meta name="demiguise-release" content="2.1.1">
+  <meta name="description" content="La guida personale a Hogwarts Legacy: missioni, sblocchi e guide pratiche, con ricerca e progressi separati per Ele e Thom.">
+  <title>Guida Completa Hogwarts Legacy</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/hogwarts-crest.png">
+  <link rel="stylesheet" href="./styles.css?v=2.1.1">
+</head>
+<body data-profile="">
+  <main class="shell">
+    <p id="verificationNotice" class="verification-notice" hidden>Modalità di verifica: queste spunte sono separate dai progressi di Ele e Thom.</p>
+    <section id="profileGate" class="profile-gate" aria-labelledby="gateTitle">
+      <div class="brand-title">Guida Completa <span>Hogwarts Legacy</span></div>
+      <h1 id="gateTitle" class="gate-heading" tabindex="-1">Chi gioca?</h1>
+      <div id="welcomeBack" hidden>
+        <p>Ritrova la tua guida e i tuoi progressi.</p>
+        <button id="continueBtn" class="primary-button" type="button">Continua</button>
+        <button id="chooseInsteadBtn" class="text-button" type="button">Cambia profilo</button>
+      </div>
+      <div id="profileChoices">
+        <p>Scegli il tuo profilo per continuare.</p>
+        <button type="button" class="profile-choice profile-ele" data-profile="ele" disabled>
+          <img class="house-image" src="./assets/houses/gryffindor.png" width="72" height="72" alt="">
+          <span class="profile-copy"><strong>Ele</strong><span>Grifondoro</span></span><span class="profile-arrow" aria-hidden="true">›</span>
+        </button>
+        <button type="button" class="profile-choice profile-thom" data-profile="thom" disabled>
+          <img class="house-image" src="./assets/houses/slytherin.png" width="72" height="72" alt="">
+          <span class="profile-copy"><strong>Thom</strong><span>Serpeverde</span></span><span class="profile-arrow" aria-hidden="true">›</span>
+        </button>
+        <p class="tiny">Ognuno ritrova i propri progressi.</p>
+      </div>
+      <button id="cancelProfileChange" class="text-button" type="button" hidden>Torna alla guida</button>
+      <p id="gateError" role="alert" hidden></p>
+      <noscript><p>Per aprire la guida e salvare le spunte, abilita JavaScript nel browser.</p></noscript>
+    </section>
+    <div id="guideApp" hidden>
+      <header class="site-header">
+        <a href="#/" class="brand" aria-label="Pagina iniziale della guida">
+          <img id="houseEmblem" class="brand-emblem" src="./assets/houses/slytherin.png" width="52" height="52" alt="">
+          <span class="brand-title">Guida Completa <span>Hogwarts Legacy</span></span>
+        </a>
+        <div class="profile-tools">
+          <details id="syncIndicator" class="sync-indicator" data-status="loading">
+            <summary id="syncToggle" aria-label="Stato del salvataggio" title="Stato del salvataggio"><span id="syncIcon" aria-hidden="true">···</span></summary>
+            <div class="sync-popover"><p id="syncStatus">Caricamento dei progressi…</p><button type="button" class="retry-button" id="retrySyncBtn" hidden>Riprova</button></div>
+          </details>
+          <details id="profileMenu" class="profile-menu">
+            <summary id="profileName">Profilo</summary>
+            <div class="profile-dropdown"><button type="button" id="changeProfileBtn">Cambia profilo</button></div>
+          </details>
+        </div>
+      </header>
+      <aside id="migrationBanner" class="migration-banner" aria-labelledby="migrationTitle" hidden>
+        <div><h2 id="migrationTitle">La guida ha un nuovo indirizzo</h2><p id="migrationMessage" role="status" aria-live="polite"></p></div>
+        <button id="migrationButton" class="migration-button" type="button">Passa al nuovo link</button>
+      </aside>
+      <aside id="syncWarning" class="sync-warning" hidden><p id="syncAlert" role="status" aria-live="polite" hidden></p><button type="button" class="retry-button" id="syncAlertRetry" hidden>Riprova</button></aside>
+      <section id="searchPanel" class="search-panel" aria-label="Ricerca nella guida">
+        <label id="searchLabel" for="guideSearch">Cerca nella guida</label>
+        <div class="search-row"><input id="guideSearch" type="search" inputmode="search" maxlength="120" autocomplete="off" spellcheck="false" placeholder="Una missione, un luogo, un oggetto…" aria-describedby="searchMessage"><button id="clearSearch" type="button" aria-label="Cancella ricerca" hidden>✕</button></div>
+        <button id="searchAll" class="text-button" type="button" hidden>Cerca in tutta la guida</button>
+        <p id="searchMessage" class="search-message" role="status" aria-live="polite"></p>
+        <div id="searchResults" class="search-results" hidden><ol id="resultList"></ol></div>
+      </section>
+      <nav class="main-nav" aria-label="Sezioni della guida">
+        <a class="nav-link" data-section="" href="#/">Home</a>
+        <a class="nav-link" data-section="missioni" href="#/missioni">Missioni</a>
+        <a class="nav-link" data-section="sblocchi" href="#/sblocchi">Sblocchi</a>
+        <a class="nav-link" data-section="pratiche" href="#/pratiche">Guide pratiche</a>
+      </nav>
+      <nav id="breadcrumbs" class="breadcrumbs" aria-label="Percorso"></nav>
+      <h1 id="viewTitle" tabindex="-1">Esplora la guida</h1>
+      <section id="homeView" class="view" aria-label="Pagina iniziale">
+        <div id="homeCards" class="section-grid"></div>
+        <section id="resumePanel" class="resume-panel" aria-labelledby="resumeTitle"><h2 id="resumeTitle">Riprendi</h2><div id="resumeContent"></div></section>
+        <p class="tiny">Nintendo Switch 2 · Nomi italiani verificati. Le soluzioni sono consultabili; gli spoiler di trama si aprono solo quando vuoi.</p>
+      </section>
+      <section id="sectionView" class="view" hidden><p id="sectionIntro" class="view-intro"></p><div id="categoryGrid" class="category-grid"></div></section>
+      <section id="categoryView" class="view" hidden><p id="categoryIntro" class="view-intro"></p><div id="categoryFilters" class="catalogue-filters"></div><p id="categoryCount" class="tiny" role="status"></p><div id="categoryContents"></div></section>
+      <section id="guideView" class="view" hidden></section>
+      <section id="demiguiseView" class="view" hidden></section>
+      <footer class="site-footer">
+        <details><summary>Come vengono salvati i progressi</summary><p>Le modifiche si sincronizzano tra i telefoni. Senza rete rimangono sul telefono fino alla riconnessione. La piccola spunta accanto al profilo conferma il salvataggio online: toccala per leggere i dettagli. Attendi questa conferma prima di cancellare i dati del browser.</p><p>I due profili sono condivisi, senza password: chi conosce il link può consultarli e modificarli. Gli aggiornamenti della guida conservano i progressi.</p></details>
+        <p class="fine">Guida indipendente, non affiliata agli autori del gioco. Emblemi delle casate e stemma di Hogwarts: <a href="https://www.harrypotter.com/" target="_blank" rel="noopener noreferrer">HarryPotter.com</a>. Stemma di Hogwarts: MinaLima.</p>
+      </footer>
+    </div>
+  </main>
+  <dialog id="objectDialog" aria-labelledby="objectDialogTitle"><button id="closeObjectDialog" class="dialog-close" type="button" aria-label="Chiudi scheda oggetto">✕</button><div id="objectDialogContent"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js?v=2.1.1"></script>
+</body>
+</html>

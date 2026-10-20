@@ -1,0 +1,14 @@
+{
+  "name": "demiguise-ele",
+  "version": "2.1.1",
+  "private": true,
+  "type": "module",
+  "description": "Guida Completa Hogwarts Legacy, pubblicabile su GitHub Pages senza compilazione",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check app.js && node --check progress.js && node --check profile-sync.js && node --check guide-data.js && node --check search.js && node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
